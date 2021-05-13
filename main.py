@@ -12,7 +12,7 @@ dados = TransactionObject()
 urls = dados.view()
 sistemas = ['esadmin','stp','scf','srh','stm']
 
-if st.sidebar.checkbox("Cadastrados"):
+if st.sidebar.checkbox("Cadastrar"):
     with st.beta_expander("Cadastrar Url"):
         entidade = st.number_input("Código Entidade",max_value=999)
         nome = st.text_input("Nome Entidade")
