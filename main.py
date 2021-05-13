@@ -11,12 +11,14 @@ from conexao import TransactionObject
 dados = TransactionObject()
 urls = dados.view()
 sistemas = ['esadmin','stp','scf','srh','stm']
-with st.beta_expander("Cadastrar Url"):
-    entidade = st.number_input("Código Entidade",max_value=999)
-    nome = st.text_input("Nome Entidade")
-    url = st.text_input('Url')
-    if st.button("Gravar"):
-        dados.insert(str(entidade),nome,url)
+
+if st.sidebar.checkbox("Cadastrados"):
+    with st.beta_expander("Cadastrar Url"):
+        entidade = st.number_input("Código Entidade",max_value=999)
+        nome = st.text_input("Nome Entidade")
+        url = st.text_input('Url')
+        if st.button("Gravar"):
+            dados.insert(str(entidade),nome,url)
 
 if st.sidebar.checkbox("Cadastrados"):
     st.header('Lista de entidades cadastradas:')
